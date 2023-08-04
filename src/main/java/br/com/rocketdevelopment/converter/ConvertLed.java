@@ -21,4 +21,12 @@ public class ConvertLed  implements IConvert<Data<Led>>{
         Data<Led> saidawriter = objectMapper.readValue(json,new TypeReference<Data<Led>>(){});
         return Optional.ofNullable(saidawriter);
     }
+
+    @Override
+    public Optional<String> convertToJson(Data<Led> led) throws JsonProcessingException {
+        String sjson = objectMapper.writeValueAsString(led);
+        return Optional.ofNullable(sjson);
+    }
+
+
 }

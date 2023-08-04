@@ -1,7 +1,7 @@
 package br.com.rocketdevelopment.constants;
 
 public enum EndPoints {
-
+    APPLY("/cgi-bin/api/v3/system/apply"),
     LOGIN("/cgi-bin/api/v3/system/login"),
     LED("/cgi-bin/api/v3/service/leds"),
     STATUS("/cgi-bin/api/v3/system/status"),

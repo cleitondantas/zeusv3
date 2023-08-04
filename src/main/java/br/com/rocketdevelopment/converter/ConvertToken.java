@@ -19,4 +19,10 @@ public class ConvertToken implements  IConvert<Data<Token>>{
         Data<Token> saidawriter = objectMapper.readValue(json,new TypeReference<Data<Token>>(){});
         return Optional.ofNullable(saidawriter);
     }
+
+    @Override
+    public Optional<String> convertToJson(Data<Token> token) throws JsonProcessingException {
+        String sjson = objectMapper.writeValueAsString(token);
+        return Optional.ofNullable(sjson);
+    }
 }

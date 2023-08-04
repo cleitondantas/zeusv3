@@ -3,6 +3,7 @@ package br.com.rocketdevelopment.model;
 import java.util.List;
 
 public class Color {
+
     private String value;
     private List<String> option_list;
 
