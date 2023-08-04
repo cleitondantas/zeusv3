@@ -27,15 +27,10 @@ public class LoginServiceTest {
         Led led = ledSerivce.getLedSettings(token);
         System.out.println(led.isActive());
         Assert.assertTrue(led.isActive());
-
-
-        led.getColor().setValue("green");
-
+        led.getColor().setValue("light green");
         ledSerivce.putLedSettings(token,led);
-
         ApplyService applyService = new ApplyService(new RequestService(basicConfig.getUrl()),new ConvertSucess(new ObjectMapper()));
         Sucess sucess = applyService.applySettings(token);
-        System.out.println(sucess.isSucess());
         Assert.assertTrue(sucess.isSucess());
     }
 }

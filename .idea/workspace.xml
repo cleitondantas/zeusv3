@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67f85781-1656-4e74-bbc6-a05176c9ddb8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/converter/ConvertSucess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/model/Sucess.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/service/ApplyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="67f85781-1656-4e74-bbc6-a05176c9ddb8" name="Changes" comment="Implementado mudança de cor de forma funcional">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/constants/EndPoints.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/constants/EndPoints.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/converter/ConvertLed.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/converter/ConvertLed.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/converter/ConvertToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/converter/ConvertToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/converter/IConvert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/converter/IConvert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/model/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/service/LedSerivce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/rocketdevelopment/service/LedSerivce.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/LoginServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +50,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "D:/Projetos/zeusv3/src/main/java/br/com/rocketdevelopment/Main.java",
     "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
@@ -107,8 +99,17 @@
       <workItem from="1690674547165" duration="17572000" />
       <workItem from="1690835522251" duration="11654000" />
       <workItem from="1691013656822" duration="5367000" />
-      <workItem from="1691089320820" duration="5099000" />
+      <workItem from="1691089320820" duration="5737000" />
     </task>
+    <task id="LOCAL-00001" summary="Implementado mudança de cor de forma funcional">
+      <option name="closed" value="true" />
+      <created>1691110835728</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1691110835728</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -124,6 +125,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implementado mudança de cor de forma funcional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado mudança de cor de forma funcional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
