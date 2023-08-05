@@ -4,9 +4,19 @@ import br.com.rocketdevelopment.model.UserPass;
 
 
 public class BasicConfig {
+
     private String url;
     private String username;
     private String password;
+
+    public BasicConfig() {
+    }
+
+    public BasicConfig(String url, String username, String password) {
+        this.url = url;
+        this.username = username;
+        this.password = password;
+    }
 
     public void addUrl(String url) {
         this.url = url;

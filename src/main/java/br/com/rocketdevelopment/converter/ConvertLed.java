@@ -2,11 +2,9 @@ package br.com.rocketdevelopment.converter;
 
 import br.com.rocketdevelopment.model.Data;
 import br.com.rocketdevelopment.model.Led;
-import br.com.rocketdevelopment.model.Token;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.util.Optional;
 
 public class ConvertLed  implements IConvert<Data<Led>>{
