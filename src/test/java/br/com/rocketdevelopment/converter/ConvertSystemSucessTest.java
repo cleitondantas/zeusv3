@@ -1,5 +1,6 @@
 package br.com.rocketdevelopment.converter;
 
+import br.com.rocketdevelopment.exception.ConvertException;
 import br.com.rocketdevelopment.model.DataValue;
 import br.com.rocketdevelopment.model.SystemSucess;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -20,18 +21,21 @@ public class ConvertSystemSucessTest {
 
     
     @Test
-    public void testConvert() throws JsonProcessingException {
+    public void testConvert() throws ConvertException {
         ConvertSucess convertSucess = new ConvertSucess(new ObjectMapper());
-        Optional<DataValue<SystemSucess>> convert = convertSucess.convert(responseSucess);
-        Assert.assertTrue(convert.get().getData().isSucess());
+        DataValue<SystemSucess> sucessDataValue = convertSucess.convert(responseSucess)
+                .orElseThrow(() -> new ConvertException("Failed to convert responseSucess"));
+        Assert.assertTrue(sucessDataValue.getData().isSucess());
     }
 
     @Test
-    public void testConvertToJson() throws JsonProcessingException {
+    public void testConvertToJson() throws ConvertException {
         ConvertSucess convertSucess = new ConvertSucess(new ObjectMapper());
-        Optional<DataValue<SystemSucess>> convert = convertSucess.convert(responseSucess);
-        Assert.assertTrue(convert.get().getData().isSucess());
-        Optional<String> json = convertSucess.convertToJson(convert.get());
-        Assert.assertTrue(json.get().contains("a6fe081f041bfbd349655e940c82d757"));
+        DataValue<SystemSucess> sucessDataValue = convertSucess.convert(responseSucess)
+                .orElseThrow(() -> new ConvertException("Failed to convert responseSucess"));
+        Assert.assertTrue(sucessDataValue.getData().isSucess());
+        String jsonString = convertSucess.convertToJson(sucessDataValue)
+                .orElseThrow(() -> new ConvertException("Failed to convert sucessDataValue to JSON"));
+        Assert.assertTrue(jsonString.contains("a6fe081f041bfbd349655e940c82d757"));
     }
 }

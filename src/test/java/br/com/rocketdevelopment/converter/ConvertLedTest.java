@@ -1,5 +1,6 @@
 package br.com.rocketdevelopment.converter;
 
+import br.com.rocketdevelopment.exception.ConvertException;
 import br.com.rocketdevelopment.model.DataValue;
 import br.com.rocketdevelopment.model.Led;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -57,18 +58,23 @@ public class ConvertLedTest {
             "}";
 
     @Test
-    public void testConvert() throws JsonProcessingException {
+    public void testConvert() throws ConvertException {
         ConvertLed convertLed = new ConvertLed(new ObjectMapper());
-        Optional<DataValue<Led>> convert = convertLed.convert(responseLed);
-        Assert.assertTrue(convert.get().getData().getAction().getValue().equalsIgnoreCase("on"));
+        DataValue<Led> ledDataValue = convertLed.convert(responseLed)
+                .orElseThrow(() -> new ConvertException("Failed to convert responseLed"));
+        String actionValue = ledDataValue.getData().getAction().getValue();
+        Assert.assertTrue(actionValue.equalsIgnoreCase("on"));
     }
 
     @Test
-    public void testConvertToJson() throws JsonProcessingException {
+    public void testConvertToJson() throws ConvertException {
         ConvertLed convertLed = new ConvertLed(new ObjectMapper());
-        Optional<DataValue<Led>> convert = convertLed.convert(responseLed);
-        Assert.assertTrue(convert.get().getData().getAction().getValue().equalsIgnoreCase("on"));
-        Optional<String> json = convertLed.convertToJson(convert.get());
-        Assert.assertTrue(json.get().contains("on"));
+        DataValue<Led> ledDataValue = convertLed.convert(responseLed)
+                .orElseThrow(() -> new ConvertException("Failed to convert responseLed"));
+        String actionValue = ledDataValue.getData().getAction().getValue();
+        Assert.assertTrue(actionValue.equalsIgnoreCase("on"));
+        String jsonString = convertLed.convertToJson(ledDataValue)
+                .orElseThrow(() -> new ConvertException("Failed to convert ledDataValue to JSON"));
+        Assert.assertTrue(jsonString.contains("on"));
     }
 }

@@ -3,6 +3,7 @@ package br.com.rocketdevelopment.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class UserPass {
+
     @JsonProperty("username")
     private String username;
 

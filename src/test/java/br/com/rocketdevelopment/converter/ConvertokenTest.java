@@ -1,5 +1,7 @@
 package br.com.rocketdevelopment.converter;
 
+import br.com.rocketdevelopment.exception.ConvertException;
+import br.com.rocketdevelopment.exception.ServiceException;
 import br.com.rocketdevelopment.model.DataValue;
 import br.com.rocketdevelopment.model.BearerToken;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -17,14 +19,14 @@ public class ConvertokenTest {
             "}";
 
     @Test
-    public void testConvertLogin() throws JsonProcessingException {
+    public void testConvertLogin() throws ConvertException {
         ConvertToken convertToken = new ConvertToken(new ObjectMapper());
         Optional<DataValue<BearerToken>> dataLed =  convertToken.convert(responseToken);
         Assert.assertTrue(dataLed.isPresent());
     }
 
     @Test
-    public void testConvertLoginToJson() throws JsonProcessingException {
+    public void testConvertLoginToJson() throws ConvertException {
         ConvertToken convertToken = new ConvertToken(new ObjectMapper());
         Optional<DataValue<BearerToken>> dataLed =  convertToken.convert(responseToken);
         Assert.assertTrue(dataLed.isPresent());
