@@ -1,6 +1,6 @@
 package br.com.rocketdevelopment.model;
 
-public class Data<T> {
+public class DataValue<T> {
 
         private T data;
 

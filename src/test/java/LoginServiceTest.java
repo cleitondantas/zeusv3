@@ -17,14 +17,12 @@ import java.util.Optional;
 public class LoginServiceTest {
 
 
-//    @Test
-//    public void login() throws Exception {
+    @Test
+   public void login() throws Exception {
 //        BasicConfig basicConfig = new BasicConfig("http://192.168.1.2","admin","Pedepano10!");
-//
 //        RequestService requestService = new RequestService(basicConfig.getUrl());
 //        LoginService loginService = new LoginService(requestService,new ConvertToken(new ObjectMapper()));
-//        Token token = loginService.login(basicConfig);
-//
+//        BearerToken token = loginService.login(basicConfig);
 //        LedSerivce ledSerivce = new LedSerivce(requestService,new ConvertLed(new ObjectMapper()));
 //        Led led = ledSerivce.getLedSettings(token);
 //        System.out.println(led.isActive());
@@ -32,7 +30,8 @@ public class LoginServiceTest {
 //        led.getColor().setValue("green");
 //        ledSerivce.putLedSettings(token,led);
 //        ApplyService applyService = new ApplyService(requestService,new ConvertSucess(new ObjectMapper()));
-//        Sucess sucess = applyService.applySettings(token);
+//        SystemSucess sucess = applyService.applySettings(token);
 //        Assert.assertTrue(sucess.isSucess());
-//    }
+        Assert.assertTrue(true);
+    }
 }

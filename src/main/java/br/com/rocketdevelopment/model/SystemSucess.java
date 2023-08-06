@@ -1,10 +1,13 @@
 package br.com.rocketdevelopment.model;
 
-public class Sucess {
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class SystemSucess {
 
     private boolean success;
     private boolean sucess;
-    private String config_hash;
+    @JsonProperty("config_hash")
+    private String configHash;
 
 
     public boolean isSuccess() {
@@ -23,11 +26,11 @@ public class Sucess {
         this.sucess = sucess;
     }
 
-    public String getConfig_hash() {
-        return config_hash;
+    public String getConfigHash() {
+        return configHash;
     }
 
-    public void setConfig_hash(String config_hash) {
-        this.config_hash = config_hash;
+    public void setConfigHash(String configHash) {
+        this.configHash = configHash;
     }
 }

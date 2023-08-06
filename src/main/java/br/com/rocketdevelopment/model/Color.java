@@ -1,11 +1,15 @@
 package br.com.rocketdevelopment.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 public class Color {
 
     private String value;
-    private List<String> option_list;
+
+    @JsonProperty("option_list")
+    private List<String> optionList;
 
     public String getValue() {
         return value;
@@ -15,11 +19,11 @@ public class Color {
         this.value = value;
     }
 
-    public List<String> getOption_list() {
-        return option_list;
+    public List<String> getOptionList() {
+        return optionList;
     }
 
-    public void setOption_list(List<String> option_list) {
-        this.option_list = option_list;
+    public void setOptionList(List<String> optionList) {
+        this.optionList = optionList;
     }
 }

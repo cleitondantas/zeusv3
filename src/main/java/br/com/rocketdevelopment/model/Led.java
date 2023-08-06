@@ -12,7 +12,7 @@ public class Led {
     @JsonProperty("color")
     private Color color;
     @JsonProperty("days_of_week")
-    private DaysOfWeek days_of_week;
+    private DaysOfWeek daysOfWeek;
     @JsonProperty("intervals")
     private List<Interval> intervals;
     @JsonProperty("action")
@@ -50,12 +50,12 @@ public class Led {
         this.color = color;
     }
 
-    public DaysOfWeek getDays_of_week() {
-        return days_of_week;
+    public DaysOfWeek getDaysOfWeek() {
+        return daysOfWeek;
     }
 
-    public void setDays_of_week(DaysOfWeek days_of_week) {
-        this.days_of_week = days_of_week;
+    public void setDaysOfWeek(DaysOfWeek daysOfWeek) {
+        this.daysOfWeek = daysOfWeek;
     }
 
 

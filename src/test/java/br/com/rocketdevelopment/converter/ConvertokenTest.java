@@ -1,7 +1,7 @@
 package br.com.rocketdevelopment.converter;
 
-import br.com.rocketdevelopment.model.Data;
-import br.com.rocketdevelopment.model.Token;
+import br.com.rocketdevelopment.model.DataValue;
+import br.com.rocketdevelopment.model.BearerToken;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Assert;
@@ -19,16 +19,16 @@ public class ConvertokenTest {
     @Test
     public void testConvertLogin() throws JsonProcessingException {
         ConvertToken convertToken = new ConvertToken(new ObjectMapper());
-        Optional<Data<Token>> dataLed =  convertToken.convert(responseToken);
+        Optional<DataValue<BearerToken>> dataLed =  convertToken.convert(responseToken);
         Assert.assertTrue(dataLed.isPresent());
     }
 
     @Test
     public void testConvertLoginToJson() throws JsonProcessingException {
         ConvertToken convertToken = new ConvertToken(new ObjectMapper());
-        Optional<Data<Token>> dataLed =  convertToken.convert(responseToken);
+        Optional<DataValue<BearerToken>> dataLed =  convertToken.convert(responseToken);
         Assert.assertTrue(dataLed.isPresent());
-        Data<Token> tokenData = dataLed.get();
+        DataValue<BearerToken> tokenData = dataLed.get();
         Optional<String> json = convertToken.convertToJson(tokenData);
         Assert.assertTrue(json.isPresent());
     }

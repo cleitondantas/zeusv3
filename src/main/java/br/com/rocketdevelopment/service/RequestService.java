@@ -2,7 +2,7 @@ package br.com.rocketdevelopment.service;
 
 import br.com.rocketdevelopment.constants.EndPoints;
 import br.com.rocketdevelopment.constants.Verb;
-import br.com.rocketdevelopment.model.Token;
+import br.com.rocketdevelopment.model.BearerToken;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -22,11 +22,11 @@ public class RequestService {
     }
 
 
-    public Optional<String> executeRequest(Verb verb,EndPoints endpoint, Token token) throws IOException {
+    public Optional<String> executeRequest(Verb verb,EndPoints endpoint, BearerToken token) throws IOException {
         return executeRequest(verb, endpoint, token, null);
     }
 
-    public Optional<String> executeRequest(Verb verb, EndPoints endpoint, Token token, String jsonBodyStr) throws IOException {
+    public Optional<String> executeRequest(Verb verb, EndPoints endpoint, BearerToken token, String jsonBodyStr) throws IOException {
         URL url = new URL(domain+endpoint.getUrl());
         HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
         httpURLConnection.setDoOutput(true);

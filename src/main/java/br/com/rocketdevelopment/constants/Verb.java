@@ -4,13 +4,13 @@ public enum Verb {
     GET("GET"),
     POST("POST"),
     PUT("PUT");
-    private final String VERB;
+    private final String verbs;
 
     Verb(String url) {
-        this.VERB = url;
+        this.verbs = url;
     }
 
     public String get() {
-        return VERB;
+        return verbs;
     }
 }

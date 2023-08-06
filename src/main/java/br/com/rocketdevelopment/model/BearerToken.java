@@ -2,14 +2,14 @@ package br.com.rocketdevelopment.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Token {
+public class BearerToken {
 
     @JsonProperty("Token")
     private String token;
 
-    public Token() {
+    public BearerToken() {
     }
-    public Token(String token) {
+    public BearerToken(String token) {
         this.token = token;
     }
 

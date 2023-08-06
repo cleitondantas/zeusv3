@@ -1,7 +1,5 @@
 package br.com.rocketdevelopment.converter;
 
-import br.com.rocketdevelopment.model.Data;
-import br.com.rocketdevelopment.model.Led;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
 import java.util.Optional;

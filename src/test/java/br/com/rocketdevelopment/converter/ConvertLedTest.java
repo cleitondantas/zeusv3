@@ -1,6 +1,6 @@
 package br.com.rocketdevelopment.converter;
 
-import br.com.rocketdevelopment.model.Data;
+import br.com.rocketdevelopment.model.DataValue;
 import br.com.rocketdevelopment.model.Led;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -59,14 +59,14 @@ public class ConvertLedTest {
     @Test
     public void testConvert() throws JsonProcessingException {
         ConvertLed convertLed = new ConvertLed(new ObjectMapper());
-        Optional<Data<Led>> convert = convertLed.convert(responseLed);
+        Optional<DataValue<Led>> convert = convertLed.convert(responseLed);
         Assert.assertTrue(convert.get().getData().getAction().getValue().equalsIgnoreCase("on"));
     }
 
     @Test
     public void testConvertToJson() throws JsonProcessingException {
         ConvertLed convertLed = new ConvertLed(new ObjectMapper());
-        Optional<Data<Led>> convert = convertLed.convert(responseLed);
+        Optional<DataValue<Led>> convert = convertLed.convert(responseLed);
         Assert.assertTrue(convert.get().getData().getAction().getValue().equalsIgnoreCase("on"));
         Optional<String> json = convertLed.convertToJson(convert.get());
         Assert.assertTrue(json.get().contains("on"));

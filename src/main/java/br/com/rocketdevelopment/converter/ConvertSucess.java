@@ -1,14 +1,14 @@
 package br.com.rocketdevelopment.converter;
 
-import br.com.rocketdevelopment.model.Data;
-import br.com.rocketdevelopment.model.Sucess;
+import br.com.rocketdevelopment.model.DataValue;
+import br.com.rocketdevelopment.model.SystemSucess;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.util.Optional;
 
-public class ConvertSucess implements IConvert<Data<Sucess>> {
+public class ConvertSucess implements IConvert<DataValue<SystemSucess>> {
 
     private ObjectMapper objectMapper;
 
@@ -17,13 +17,13 @@ public class ConvertSucess implements IConvert<Data<Sucess>> {
     }
 
     @Override
-    public Optional<Data<Sucess>> convert(String json) throws JsonProcessingException {
-        Data<Sucess> sucessData = objectMapper.readValue(json, new TypeReference<Data<Sucess>>() {});
+    public Optional<DataValue<SystemSucess>> convert(String json) throws JsonProcessingException {
+        DataValue<SystemSucess> sucessData = objectMapper.readValue(json, new TypeReference<DataValue<SystemSucess>>() {});
         return Optional.ofNullable(sucessData);
     }
 
     @Override
-    public Optional<String> convertToJson(Data<Sucess> sucess) throws JsonProcessingException {
+    public Optional<String> convertToJson(DataValue<SystemSucess> sucess) throws JsonProcessingException {
         String sjson = objectMapper.writeValueAsString(sucess);
         return Optional.ofNullable(sjson);
     }
