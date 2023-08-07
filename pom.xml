@@ -7,6 +7,32 @@
     <groupId>br.com.rocketdevelopment</groupId>
     <artifactId>zeusv3</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Lib "Zeus" Zero Effort Unified System, this is a java library for the Intelbras platform used in network products.</description>
+    <url>https://www.rocketdevelopment.com.br</url>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Cleiton Dantas</name>
+            <email>cleiton.dantas@outlook.com</email>
+            <organization>rocketdevelopment</organization>
+            <organizationUrl>https://github.com/cleitondantas</organizationUrl>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:git://github.com/cleitondantas/zeusv3.git</connection>
+        <developerConnection>scm:git:ssh://github.com:cleitondantas/zeusv3.git</developerConnection>
+        <url>https://github.com/cleitondantas/zeusv3/tree/main</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -34,6 +60,36 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 
 </project>
