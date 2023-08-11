@@ -40,12 +40,21 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rocketdevelopment_zeusv3
 
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+#      - name: Build with Maven
+#        run: mvn -B package --file pom.xml
 
-      - name: Archive production artifacts
-        uses: actions/upload-artifact@v2
-        with:
-          name: packaged-zeusv3-jar
-          path: target/*.jar
+      - name: Publish package
+        env:
+          JRELEASER_NEXUS2_USERNAME: ${{ secrets.JRELEASER_NEXUS2_USERNAME }}
+          JRELEASER_NEXUS2_PASSWORD: ${{ secrets.JRELEASER_NEXUS2_PASSWORD }}
+          JRELEASER_GPG_PASSPHRASE: ${{ secrets.JRELEASER_GPG_PASSPHRASE }}
+          JRELEASER_GPG_SECRET_KEY: ${{ secrets.JRELEASER_GPG_SECRET_KEY }}
+          JRELEASER_GPG_PUBLIC_KEY: ${{ secrets.JRELEASER_GPG_PUBLIC_KEY }}
+          JRELEASER_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: ./mvnw -Prelease deploy jreleaser:deploy -DaltDeploymentRepository=local::file:./target/staging-deploy
 
+#      - name: Archive production artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: packaged-zeusv3-jar
+#          path: target/*.jar
