@@ -6,9 +6,8 @@
 
     <groupId>br.com.rocketdevelopment</groupId>
     <artifactId>zeusv3</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
-
     <name>ZeusV3</name>
     <description>Lib "Zeus" Zero Effort Unified System, this is a java library for the Intelbras platform used in network products.</description>
     <url>https://www.rocketdevelopment.com.br</url>
@@ -106,27 +105,6 @@
                 <artifactId>jreleaser-maven-plugin</artifactId>
                 <configuration>
                     <jreleaser>
-                        <project>
-                            <name>ZeusV3</name>
-                            <description>Lib "Zeus" Zero Effort Unified System, this is a java library for the Intelbras platform used in network products.</description>
-                            <inceptionYear>2023</inceptionYear>
-                            <url>https://www.rocketdevelopment.com.br</url>
-                            <copyright>2023 rocketdevelopment</copyright>
-                            <developers>
-                                <developer>
-                                    <id>cleitonpanao</id>
-                                    <name>Cleiton Dantas</name>
-                                </developer>
-                            </developers>
-                            <licenses>
-                                <license>
-                                    <name>MIT License</name>
-                                    <url>http://www.opensource.org/licenses/mit-license.php</url>
-                                    <distribution>repo</distribution>
-                                </license>
-                            </licenses>
-
-                        </project>
                         <signing>
                             <active>ALWAYS</active>
                             <armored>true</armored>
